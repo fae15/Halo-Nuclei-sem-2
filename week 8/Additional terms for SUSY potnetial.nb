@@ -1,0 +1,364 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     13224,        356]
+NotebookOptionsPosition[     12012,        328]
+NotebookOutlinePosition[     12412,        344]
+CellTagsIndexPosition[     12369,        341]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "Short notebook that quicky re-derives the general L case for the single \
+particle matrix elements, since we have been using a slightly different \
+convention to last semester.\nStart by choosing our gaussian basis to be ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         SubscriptBox["\[CapitalPhi]", 
+          StyleBox["i", "TI"]], 
+         RowBox[{"(", 
+           StyleBox["r", "TI"], ")"}], "\[LongEqual]", 
+         SubscriptBox[
+          StyleBox["N", "TI"], 
+          StyleBox["i", "TI"]], 
+         SuperscriptBox[
+          StyleBox["r", "TI"], 
+          StyleBox["l", "TI"]], 
+         SuperscriptBox[
+          StyleBox["e", "TI"], 
+          RowBox[{"-", 
+            SuperscriptBox[
+             StyleBox["r", "TI"], "2"], "/", 
+            SubsuperscriptBox["\[Alpha]", 
+             StyleBox["i", "TI"], "2"]}]]}], TraditionalForm], "errors" -> {},
+      "input" -> "\\Phi_{i}(r)=N_{i}r^{l}e^{-r^{2}/\\alpha_{i}^{2}}", "state" -> 
+     "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "8e3db7ef-02d6-1043-b424-8f858f65ced7"],
+ ". We stick now only for the ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["l", "TI"], "\[LongEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "l=0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "cf2d6cc7-8b67-ca43-890d-4deb2110271b"],
+ " case, with the interest being only to derive what is needed for the ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["l", "TI"], "+", "1"}], TraditionalForm], "errors" -> {}, 
+     "input" -> "l+1", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "2a67ed52-45d2-0c4c-8f15-3cef3e5de4ba"],
+ " centrifugal barrier obtained in the SUSY expression. Since fit gaussians \
+to our SUSY term we can re use our previous result for that. \n\nWe will \
+assume that because we\[CloseCurlyQuote]ve now taken ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         StyleBox["l", "TI"], "\[NotEqual]", "0"}], TraditionalForm], 
+     "errors" -> {}, "input" -> "l\\neq0", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "bfa36177-a233-7242-823e-712c0695c301"],
+ " that the spherical harmonic terms are appropriately normalised, hence \
+there is a slight difference in the normalisation due to a factor of ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{"4", "\[Pi]"}], TraditionalForm], "errors" -> {}, "input" -> 
+     "4\\pi", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "b13ca3c3-7b53-3e40-8dce-99609dd67a41"],
+ " being misplaced(?)."
+}], "Text",
+ CellChangeTimes->{{3.9835124229488583`*^9, 3.9835125183460884`*^9}, {
+  3.9835125604449863`*^9, 3.9835125663806133`*^9}, {3.9835126059576187`*^9, 
+  3.9835126294028206`*^9}, {3.983512712072315*^9, 3.9835127923572655`*^9}, {
+  3.9835128404523144`*^9, 3.9835128547752514`*^9}, {3.983512925931261*^9, 
+  3.9835129524633446`*^9}, {3.983513019032711*^9, 3.983513093188675*^9}, {
+  3.9835132681531887`*^9, 3.9835133205542393`*^9}, {3.983513419565296*^9, 
+  3.9835134227865314`*^9}},ExpressionUUID->"ecb7d213-77a2-f84e-999a-\
+4a4b5a0735b9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"GaussWaveFunc", "[", 
+   RowBox[{"r_", ",", " ", "l_", ",", " ", "\[Alpha]_"}], "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox["r", "l"], 
+   RowBox[{"Exp", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["r", "2"]}], "/", 
+     SuperscriptBox["\[Alpha]", "2"]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"GaussWaveFunc", "[", 
+     RowBox[{"r", ",", " ", "l", ",", " ", "\[Alpha]"}], "]"}], 
+    RowBox[{"GaussWaveFunc", "[", 
+     RowBox[{"r", ",", " ", "l", ",", " ", "\[Alpha]"}], "]"}], 
+    SuperscriptBox["r", "2"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"r", ",", " ", "0", ",", " ", "\[Infinity]"}], "}"}], ",", 
+   RowBox[{"Assumptions", "->", 
+    RowBox[{
+     RowBox[{"\[Alpha]", ">", "0"}], "\[And]", 
+     RowBox[{"l", ">=", "0"}]}]}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.983513424678705*^9, 3.9835135263316765`*^9}, {
+  3.983513987046112*^9, 3.9835139897723694`*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"10bd09cf-de9c-dd4e-b983-fd86c7542b29"],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["2", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["5", "2"]}], "-", "l"}]], " ", 
+  SuperscriptBox["\[Alpha]", 
+   RowBox[{"3", "+", 
+    RowBox[{"2", " ", "l"}]}]], " ", 
+  RowBox[{"Gamma", "[", 
+   RowBox[{
+    FractionBox["3", "2"], "+", "l"}], "]"}]}]], "Output",
+ CellChangeTimes->{{3.9835135139753017`*^9, 3.9835135279400997`*^9}, 
+   3.98351399239291*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"300faade-52da-f341-afcc-84a5bb5b9de7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"GaussNormalisation", "[", 
+   RowBox[{"l_", ",", " ", "\[Alpha]_"}], "]"}], ":=", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["2", 
+     RowBox[{"5", "/", "4"}]], 
+    SuperscriptBox["2", 
+     RowBox[{"l", "/", "2"}]]}], 
+   RowBox[{
+    SuperscriptBox["\[Alpha]", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"3", "/", "2"}], "+", "l"}], ")"}]], 
+    RowBox[{"Sqrt", "[", 
+     RowBox[{"Gamma", "[", 
+      RowBox[{
+       RowBox[{"3", "/", "2"}], " ", "+", " ", "l"}], "]"}], "]"}]}]]}], "\[IndentingNewLine]", 
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Integrate", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"GaussNormalisation", "[", 
+      RowBox[{"l", ",", " ", "\[Alpha]"}], "]"}], 
+     RowBox[{"GaussWaveFunc", "[", 
+      RowBox[{"r", ",", "l", ",", " ", "\[Alpha]"}], "]"}], 
+     RowBox[{"GaussNormalisation", "[", 
+      RowBox[{"l", ",", " ", "\[Alpha]"}], "]"}], 
+     RowBox[{"GaussWaveFunc", "[", 
+      RowBox[{"r", ",", "l", ",", " ", "\[Alpha]"}], "]"}], 
+     SuperscriptBox["r", "2"]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"r", ",", "0", ",", " ", "\[Infinity]"}], "}"}], ",", 
+    RowBox[{"Assumptions", "->", 
+     RowBox[{
+      RowBox[{"\[Alpha]", ">", "0"}], "\[And]", 
+      RowBox[{"l", ">=", "0"}]}]}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.9835135361612797`*^9, 3.9835136658765125`*^9}, {
+  3.9835139952627716`*^9, 3.983513996631132*^9}, {3.9835143224226265`*^9, 
+  3.9835144282016907`*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"ac6041a1-c23e-604a-a52d-fcac6fadb6ea"],
+
+Cell[BoxData["1.`"], "Output",
+ CellChangeTimes->{{3.9835136509395466`*^9, 3.9835136664527073`*^9}, 
+   3.9835140349035625`*^9, {3.983514368686226*^9, 3.9835143982044125`*^9}, 
+   3.983514430150345*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"467c08c9-9527-484a-9e91-a77e8b13944a"]
+}, Open  ]],
+
+Cell["\<\
+The only term we are interested in calculating with this is the centrifugal \
+barrier term, which we now do.\
+\>", "Text",
+ CellChangeTimes->{{3.983513672321583*^9, 3.9835137025324535`*^9}, {
+  3.9835137404946594`*^9, 
+  3.9835137465249805`*^9}},ExpressionUUID->"4d664997-5b9a-d24a-a752-\
+9d1fdff8aa75"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"GaussNormalisation", "[", 
+    RowBox[{"l", ",", " ", "\[Alpha]i"}], "]"}], 
+   RowBox[{"GaussNormalisation", "[", 
+    RowBox[{"l", ",", " ", "\[Alpha]j"}], "]"}], 
+   RowBox[{"Integrate", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"GaussWaveFunc", "[", 
+       RowBox[{"r", ",", " ", "l", ",", " ", "\[Alpha]i"}], "]"}], 
+      RowBox[{"(", 
+       RowBox[{"l", 
+        RowBox[{"(", 
+         RowBox[{"l", "+", "1"}], ")"}]}], ")"}], 
+      RowBox[{"GaussWaveFunc", "[", 
+       RowBox[{"r", ",", " ", "l", ",", " ", "\[Alpha]j"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", " ", "0", ",", " ", "\[Infinity]"}], "}"}], ",", 
+     RowBox[{"Assumptions", "->", 
+      RowBox[{
+       RowBox[{"\[Alpha]", ">", "0"}], "\[And]", 
+       RowBox[{"\[Alpha]j", ">", "0"}], "\[And]", 
+       RowBox[{"l", ">=", "0"}]}]}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.983513749483679*^9, 3.9835138516665554`*^9}, 
+   3.9835139626030693`*^9, {3.983514010341158*^9, 3.9835140483724327`*^9}, {
+   3.983514189365137*^9, 3.9835141922923336`*^9}, {3.9835142347779636`*^9, 
+   3.983514236610256*^9}},
+ CellLabel->"In[35]:=",ExpressionUUID->"a21d30f1-54e2-b344-8bdf-dc62f4113daf"],
+
+Cell[BoxData[
+ TemplateBox[{
+   FractionBox[
+    RowBox[{
+      SuperscriptBox["2", 
+       RowBox[{
+         FractionBox["5", "2"], "+", "l"}]], " ", "l", " ", 
+      RowBox[{"(", 
+        RowBox[{"1", "+", "l"}], ")"}], " ", 
+      SuperscriptBox["\[Alpha]i", 
+       RowBox[{
+         RowBox[{"-", 
+           FractionBox["3", "2"]}], "-", "l"}]], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+         RowBox[{
+           FractionBox["1", 
+            SuperscriptBox["\[Alpha]i", "2"]], "+", 
+           FractionBox["1", 
+            SuperscriptBox["\[Alpha]j", "2"]]}], ")"}], 
+       RowBox[{
+         RowBox[{"-", 
+           FractionBox["1", "2"]}], "-", "l"}]], " ", 
+      SuperscriptBox["\[Alpha]j", 
+       RowBox[{
+         RowBox[{"-", 
+           FractionBox["3", "2"]}], "-", "l"}]]}], 
+    RowBox[{"1", "+", 
+      RowBox[{"2", " ", "l"}]}]], 
+   RowBox[{
+     RowBox[{
+       SuperscriptBox["\[Alpha]j", "2"], " ", 
+       RowBox[{"Re", "[", 
+         FractionBox["1", 
+          SuperscriptBox["\[Alpha]i", "2"]], "]"}]}], ">", 
+     RowBox[{"-", "1"}]}]},
+  "ConditionalExpression"]], "Output",
+ CellChangeTimes->{{3.9835138147050323`*^9, 3.9835138539062634`*^9}, {
+   3.9835140234459133`*^9, 3.9835140544963646`*^9}, 3.9835142040003376`*^9, {
+   3.983514377498974*^9, 3.983514405360567*^9}, 3.983514459681593*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"5834ba6f-64fd-8a4f-a6f7-ba5263ee099b"]
+}, Open  ]],
+
+Cell[TextData[{
+ "This can be written as ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[<|"boxes" -> FormBox[
+       RowBox[{
+         FractionBox[
+          RowBox[{
+            SuperscriptBox["2", 
+             RowBox[{
+               FractionBox["5", "2"], "+", 
+               StyleBox["l", "TI"]}]], 
+            StyleBox["l", "TI"], 
+            RowBox[{"(", 
+              RowBox[{
+                StyleBox["l", "TI"], "+", "1"}], ")"}]}], 
+          RowBox[{"1", "+", "2", 
+            StyleBox["l", "TI"]}]], 
+         SuperscriptBox[
+          RowBox[{"(", 
+            FractionBox[
+             RowBox[{
+               SubscriptBox["\[Alpha]", 
+                StyleBox["i", "TI"]], 
+               SubscriptBox["\[Alpha]", 
+                StyleBox["j", "TI"]]}], 
+             RowBox[{
+               SubsuperscriptBox["\[Alpha]", 
+                StyleBox["i", "TI"], "2"], "+", 
+               SubsuperscriptBox["\[Alpha]", 
+                StyleBox["j", "TI"], "2"]}]], ")"}], 
+          RowBox[{
+            FractionBox["1", "2"], "+", 
+            StyleBox["l", "TI"]}]]}], TraditionalForm], "errors" -> {}, 
+     "input" -> 
+     "\\frac{2^{\\frac{5}{2} + \
+l}l(l+1)}{1+2l}\\left(\\frac{\\alpha_{i}\\alpha_{j}}{\\alpha_{i}^{2}+\\alpha_{\
+j}^{2}}\\right)^{\\frac{1}{2}+l}", "state" -> "Boxes"|>,
+    "TeXAssistantTemplate"], TraditionalForm]],ExpressionUUID->
+  "014b2292-4158-a24d-ba91-5fd26080300c"]
+}], "Text",
+ CellChangeTimes->{{3.98351465342964*^9, 
+  3.983514667005867*^9}},ExpressionUUID->"9433ad4c-01c7-7f40-947c-\
+275c0363d152"]
+},
+WindowSize->{1141.2, 573.6},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"879831e2-4b6f-134f-835f-53aa9e8b758c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 3398, 76, 167, "Text",ExpressionUUID->"ecb7d213-77a2-f84e-999a-4a4b5a0735b9"],
+Cell[CellGroupData[{
+Cell[3977, 100, 1066, 27, 52, "Input",ExpressionUUID->"10bd09cf-de9c-dd4e-b983-fd86c7542b29"],
+Cell[5046, 129, 485, 14, 46, "Output",ExpressionUUID->"300faade-52da-f341-afcc-84a5bb5b9de7"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5568, 148, 1559, 41, 98, "Input",ExpressionUUID->"ac6041a1-c23e-604a-a52d-fcac6fadb6ea"],
+Cell[7130, 191, 281, 4, 32, "Output",ExpressionUUID->"467c08c9-9527-484a-9e91-a77e8b13944a"]
+}, Open  ]],
+Cell[7426, 198, 313, 7, 33, "Text",ExpressionUUID->"4d664997-5b9a-d24a-a752-9d1fdff8aa75"],
+Cell[CellGroupData[{
+Cell[7764, 209, 1257, 29, 47, "Input",ExpressionUUID->"a21d30f1-54e2-b344-8bdf-dc62f4113daf"],
+Cell[9024, 240, 1416, 40, 73, "Output",ExpressionUUID->"5834ba6f-64fd-8a4f-a6f7-ba5263ee099b"]
+}, Open  ]],
+Cell[10455, 283, 1553, 43, 63, "Text",ExpressionUUID->"9433ad4c-01c7-7f40-947c-275c0363d152"]
+}
+]
+*)
+
