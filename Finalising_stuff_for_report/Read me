@@ -1,4 +1,14 @@
 List of things in this folder
 
 i) Range_parameters and scattering strengths for a=-18.6 and a=-15.
-ii)
+    Values of the range parameters and scattering strnegths
+    Ranges: 1, 1.5, 2.0, 2.5, 3, 3.5
+    Stregnths, a = -18.6: -104.86199012994786, -45.31883412599572, -24.800504660606435, -15.447500830888774, -10.447026634216332, -7.480198037624372
+    Stregnths, a = -15.0: -103.43981270790114, -44.423700267076576, -24.166676723957107, -14.969261801242858, -10.069981020689035, -7.174026143550886
+  Plot of these in Scattering_Length_plot.png
+
+ii) Picking different values of sigma and Vnn in the three body caclulation for both SUSY and psuedopotential
+    Outputs in respective files, changes effects the 7th significant figure, negligable effect for the range params used.
+
+iii) Aditional plots
+     1)
