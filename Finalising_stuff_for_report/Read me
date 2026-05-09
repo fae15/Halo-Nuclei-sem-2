@@ -11,3 +11,20 @@ ii) Picking different values of sigma and Vnn in the three body caclulation for 
     Outputs in respective files, changes effects the 7th significant figure, negligable effect for the range params used.
 
 iii) Aditional plots
+
+Values of things found
+  i) Two-Body Caculation, Energies
+     1) Intial calulation
+        1s: -39.7191215 MeV, 2s: -0.292477506 MeV
+     2) SUSY calcualtion
+        2S: -0.292744667 MeV
+        Differes by 1 at 3 s.f., not bad
+     3) Pseudopotential Calculation
+        2S: -0.292477499 lambda <= 10**7
+            -0.292477482 lambda = 10**8
+            -0.292473995 lambda <= 10**11
+            -8.38777547 lambda <= 10**12
+  ii) Two-Body Caculation, Rms radius
+    1) Inital Calculation 2S: 8.76887904347606 fm
+    2) SUSY Calculation 2S: 7.89974494186064 fm
+    3) Pseudopotential Calculation
