@@ -15,16 +15,49 @@ iii) Aditional plots
 Values of things found
   i) Two-Body Caculation, Energies
      1) Intial calulation
-        1s: -39.7191215 MeV, 2s: -0.292477506 MeV
+        1s: E_1s =  -39.7191215 MeV, 2s: E_2s = -0.292477506 MeV
      2) SUSY calcualtion
-        2S: -0.292744667 MeV
+        2S: E_2s_susy = -0.292744667 MeV
         Differes by 1 at 3 s.f., not bad
      3) Pseudopotential Calculation
-        2S: -0.292477499 lambda <= 10**7
-            -0.292477482 lambda = 10**8
-            -0.292473995 lambda <= 10**11
-            -8.38777547 lambda <= 10**12
+        2S: E_2s_107 = -0.292477499 lambda <= 10**7
+            E_2s_109 = -0.292477482 lambda = 10**8
+            E_2s_1011 = -0.292473995 lambda <= 10**11
+            E_2s_1012 = -8.38777547 lambda <= 10**12
   ii) Two-Body Caculation, Rms radius
     1) Inital Calculation 2S: 8.76887904347606 fm
     2) SUSY Calculation 2S: 7.89974494186064 fm
     3) Pseudopotential Calculation
+       Quite a lot, and all vary with the allowed precision, but in general correct up to 6 s.f. for lambda = 10**9
+
+  iii) Three-Body Calculation, Bound state energies. We split into the dis and indis cases.
+    1) Distinguishable particles
+       Initial calculation, no NN interaction:
+          Energies: 2E_1s 79.43778 Mev, E_1s + continum coupling, E_1s + E_2s, E_2s + continum coupling.
+          Need to discus these continum coupling states in the meeting.
+       Initial calculation, with NN interaction:
+          Energies "E_1s jumps to 89.336 MeV, now very hard to pick out the other terms in the mix due to
+          core + continum coupling.
+       Pseudopotential Caclulation, no NN interaction:
+          Energies -1.12240739e+00 -2.92090470e-01 -2.92090430e-01 -2.92054879e-01
+                   -2.92054643e-01 -2.91966521e-01 -2.91965543e-01 -2.91757287e-01
+                   -2.91753583e-01 -2.91263982e-01 -2.91250294e-01 -2.90099719e-01
+                   -2.90049568e-01 -2.87346319e-01 -2.87163316e-01 -2.80811218e-01
+                   -2.80148381e-01 -2.65169561e-01 -2.62812712e-01 -2.27013199e-01
+                   -2.18998403e-01 -1.30291643e-01 -1.05263895e-01
+       Pseudopotential Caclulation, with NN interaction:
+          Energies -1.12240739e+00 -2.92090470e-01 -2.92090430e-01 -2.92054879e-01
+                   -2.92054643e-01 -2.91966521e-01 -2.91965543e-01 -2.91757287e-01
+                   -2.91753583e-01 -2.91263982e-01 -2.91250294e-01 -2.90099719e-01
+                   -2.90049568e-01 -2.87346319e-01 -2.87163316e-01 -2.80811218e-01
+                   -2.80148381e-01 -2.65169561e-01 -2.62812712e-01 -2.27013199e-01
+                   -2.18998403e-01 -1.30291643e-01 -1.05263895e-01
+
+    2) Indistinguishable particles
+       Initial calculation, no NN interaction:
+          Energies
+       Initial calculation, with NN interaction:
+          Energies
+
+
+
